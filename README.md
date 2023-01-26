@@ -20,5 +20,5 @@ Queries :
 11 : Selection des employés triés par nom de famille;
 12 : Selection du nombre de chambres occupées;
 13 : Selection de la moyenne du salaire;
-14 :     Selection du nombre total de chambres libres par type de chambre;
-15 :
+14 : Selection du nombre total de chambres libres par type de chambre;
+15 : selectionner le nombre de chambres libres où le type de chambre est "accès handicapé";
