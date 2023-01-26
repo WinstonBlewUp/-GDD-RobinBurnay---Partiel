@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : jeu. 26 jan. 2023 à 14:48
+-- Généré le : jeu. 26 jan. 2023 à 15:21
 -- Version du serveur :  5.7.34
 -- Version de PHP : 7.4.21
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Table Customer`
+-- Structure de la table `Customer`
 --
 
-CREATE TABLE `Table Customer` (
+CREATE TABLE `Customer` (
   `first_name` varchar(25) NOT NULL,
   `last_name` varchar(25) NOT NULL,
   `id_customer` int(11) NOT NULL,
@@ -40,10 +40,10 @@ CREATE TABLE `Table Customer` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Table Employees`
+-- Structure de la table `Employees`
 --
 
-CREATE TABLE `Table Employees` (
+CREATE TABLE `Employees` (
   `first_name` varchar(25) NOT NULL,
   `last_name` varchar(25) NOT NULL,
   `id_employee` int(11) NOT NULL,
@@ -57,10 +57,10 @@ CREATE TABLE `Table Employees` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Table Hotel`
+-- Structure de la table `Hotel`
 --
 
-CREATE TABLE `Table Hotel` (
+CREATE TABLE `Hotel` (
   `name` varchar(25) NOT NULL,
   `location` varchar(50) NOT NULL,
   `num_room` int(11) NOT NULL,
@@ -71,10 +71,10 @@ CREATE TABLE `Table Hotel` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Table Room`
+-- Structure de la table `Room`
 --
 
-CREATE TABLE `Table Room` (
+CREATE TABLE `Room` (
   `num_room` int(11) NOT NULL,
   `type_room` varchar(10) NOT NULL,
   `type_bed` int(11) NOT NULL,
@@ -90,30 +90,30 @@ CREATE TABLE `Table Room` (
 --
 
 --
--- Index pour la table `Table Customer`
+-- Index pour la table `Customer`
 --
-ALTER TABLE `Table Customer`
+ALTER TABLE `Customer`
   ADD PRIMARY KEY (`id_customer`),
   ADD KEY `id_employee` (`id_employee`);
 
 --
--- Index pour la table `Table Employees`
+-- Index pour la table `Employees`
 --
-ALTER TABLE `Table Employees`
+ALTER TABLE `Employees`
   ADD PRIMARY KEY (`id_employee`);
 
 --
--- Index pour la table `Table Hotel`
+-- Index pour la table `Hotel`
 --
-ALTER TABLE `Table Hotel`
+ALTER TABLE `Hotel`
   ADD KEY `num_room` (`num_room`),
   ADD KEY `id_customer` (`id_customer`),
   ADD KEY `id_employee` (`id_employee`);
 
 --
--- Index pour la table `Table Room`
+-- Index pour la table `Room`
 --
-ALTER TABLE `Table Room`
+ALTER TABLE `Room`
   ADD PRIMARY KEY (`num_room`),
   ADD KEY `id_customer` (`id_customer`);
 
@@ -122,21 +122,21 @@ ALTER TABLE `Table Room`
 --
 
 --
--- AUTO_INCREMENT pour la table `Table Customer`
+-- AUTO_INCREMENT pour la table `Customer`
 --
-ALTER TABLE `Table Customer`
+ALTER TABLE `Customer`
   MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `Table Employees`
+-- AUTO_INCREMENT pour la table `Employees`
 --
-ALTER TABLE `Table Employees`
+ALTER TABLE `Employees`
   MODIFY `id_employee` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `Table Room`
+-- AUTO_INCREMENT pour la table `Room`
 --
-ALTER TABLE `Table Room`
+ALTER TABLE `Room`
   MODIFY `num_room` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -144,22 +144,22 @@ ALTER TABLE `Table Room`
 --
 
 --
--- Contraintes pour la table `Table Customer`
+-- Contraintes pour la table `Customer`
 --
-ALTER TABLE `Table Customer`
-  ADD CONSTRAINT `table customer_ibfk_1` FOREIGN KEY (`id_employee`) REFERENCES `Table Employees` (`id_employee`);
+ALTER TABLE `Customer`
+  ADD CONSTRAINT `customer_ibfk_1` FOREIGN KEY (`id_employee`) REFERENCES `employees` (`id_employee`);
 
 --
--- Contraintes pour la table `Table Hotel`
+-- Contraintes pour la table `Hotel`
 --
-ALTER TABLE `Table Hotel`
-  ADD CONSTRAINT `table hotel_ibfk_1` FOREIGN KEY (`id_employee`) REFERENCES `Table Employees` (`id_employee`);
+ALTER TABLE `Hotel`
+  ADD CONSTRAINT `hotel_ibfk_1` FOREIGN KEY (`id_employee`) REFERENCES `employees` (`id_employee`);
 
 --
--- Contraintes pour la table `Table Room`
+-- Contraintes pour la table `Room`
 --
-ALTER TABLE `Table Room`
-  ADD CONSTRAINT `table room_ibfk_1` FOREIGN KEY (`id_customer`) REFERENCES `Table Customer` (`id_customer`) ON UPDATE CASCADE;
+ALTER TABLE `Room`
+  ADD CONSTRAINT `room_ibfk_1` FOREIGN KEY (`id_customer`) REFERENCES `customer` (`id_customer`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
