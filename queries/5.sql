@@ -1,1 +1,1 @@
-SELECT name, location, num_room FROM Hotel;
+SELECT name, location, n_room FROM Hotel;

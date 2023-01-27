@@ -1,1 +1,1 @@
-SELECT COUNT(num_room) FROM Room WHERE busy = true;
+SELECT COUNT(n_room) FROM Room WHERE busy = true;

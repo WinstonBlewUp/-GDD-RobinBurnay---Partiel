@@ -1,3 +1,1 @@
-SELECT name, type_room, type_bed, n_room, busy FROM Table Hotel
-JOIN Table Room ON Table Hotel.num_room = Table Room.num_room
-WHERE Table Room.busy = false;
+SELECT first_name, last_name, num_room from Customer JOIN Room on Customer.id_customer = Room.id_customer WHERE busy = 1;

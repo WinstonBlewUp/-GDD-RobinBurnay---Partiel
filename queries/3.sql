@@ -1,1 +1,1 @@
-SELECT SUM(num_room) FROM Hotel;
+SELECT job_title FROM Employees WHERE id_employee< 3;
