@@ -6,7 +6,7 @@ Démarche :
 
 Au centre de la démarche de la création de cette base de données est l'étude des besoins d'un manager. C'est-à-dire, quelles interactions un manager aurait il besoin de réaliser avec la base de données. Voici une courte liste non exhaustive de ces intéractions : 
 
--ajouter / modifier / supprimer un profil client.
+- ajouter / modifier / supprimer un profil client.
 - ajouter / Modifier / supprimer un profil employé.
 - vérifier la disponibilité d'une chambre.
 - vérifier les caractéristiques de la chambre (type de chambre).
@@ -20,6 +20,7 @@ Cette étude des besoins permet de définir aisément les axes de recherche util
 Queries : 
 
 1 : Sélectionner toutes les informations des clients;
+
 2 : Sélectionner le nom et le prénom de tous les employés;
 3 : selectionne les titres de poste concernant les employés ayant un Id inférieur à 3;
 4 : Sélectionner les informations de toutes les chambres occupées;

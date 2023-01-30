@@ -1,1 +1,1 @@
-SELECT * FROM Room WHERE busy = 1;
+SELECT * FROM Room WHERE busy = true;
